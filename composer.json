@@ -1,0 +1,32 @@
+{
+    "name": "saccas/srf",
+    "type": "typo3-cms-extension",
+    "description": "Online media provider for srf.ch",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "srf",
+        "online media helper",
+        "video",
+        "fal"
+    ],
+    "license": ["GPL-2.0-or-later"],
+    "version": "1.0.0",
+    "require": {
+        "typo3/cms-core": "^8.7.0|| ^9.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Saccas\\Srf\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Saccas\\Srf\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "srf": "self.version",
+        "typo3-ter/srf": "self.version"
+    }
+}
