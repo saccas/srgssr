@@ -1,9 +1,9 @@
 <?php
-namespace Saccas\Srf\Resource\OnlineMedia\Helpers;
+namespace Saccas\Srgssr\Resource\OnlineMedia\Helpers;
 
 /***
  *
- * This file is part of the "Srf" Extension for TYPO3 CMS.
+ * This file is part of the "Srgssr" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.

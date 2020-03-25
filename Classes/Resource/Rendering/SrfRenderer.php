@@ -1,9 +1,9 @@
 <?php
-namespace Saccas\Srf\Resource\Rendering;
+namespace Saccas\Srgssr\Resource\Rendering;
 
 /***
  *
- * This file is part of the "Srf" Extension for TYPO3 CMS.
+ * This file is part of the "Srgssr" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
@@ -134,6 +134,7 @@ class SrfRenderer implements FileRendererInterface
         $videoId = $this->getVideoIdFromFile($file);
 
         $urlParams = [];
+/*
         if (!empty($options['autoplay'])) {
             $urlParams[] = 'autoplay=true';
         }
@@ -142,9 +143,10 @@ class SrfRenderer implements FileRendererInterface
         }
         $urlParams[] = 'title=' . (int)!empty($options['showinfo']);
         $urlParams[] = 'byline=' . (int)!empty($options['showinfo']);
-        $urlParams[] = 'portrait=0';
+*/
+        $urlParams[] = 'start=';
 
-        return sprintf('https://player.srf.com/embed/%s?%s', $videoId, implode('&amp;', $urlParams));
+        return sprintf('//tp.srgssr.ch/p/srf/embed?urn=urn:srf:video:%s&%s', $videoId, implode('&amp;', $urlParams));
     }
 
     /**
