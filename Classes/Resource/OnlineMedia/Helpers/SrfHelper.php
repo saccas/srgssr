@@ -95,7 +95,7 @@ class SrfHelper extends AbstractOEmbedHelper
      */
     protected function getOEmbedUrl($mediaId, $format = 'json')
     {
-        return sprintf('https://il.srgssr.ch/integrationlayer/2.0/mediaComposition/byUrn/urn:srf:video:%s.json', $mediaId);
+        return sprintf('https://il.srgssr.ch/integrationlayer/2.0/mediaComposition/byUrn/urn:srf:video:%s.json?onlyChapters=true&vector=portalplay', $mediaId);
     }
 
     /**
@@ -114,10 +114,10 @@ class SrfHelper extends AbstractOEmbedHelper
         $data = json_decode($json, true);
 
         return [
-            'title' => $data['chapterList']['title'],
+            'title' => $data['episode']['title'],
             'width' => 480,
             'height' => 270,
-            'thumbnail_url' => $data['chapterList']['imageUrl'],
+            'thumbnail_url' => $data['episode']['imageUrl'],
             'type' => 'video'
         ];
     }

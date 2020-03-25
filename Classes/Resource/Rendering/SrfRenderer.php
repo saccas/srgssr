@@ -134,17 +134,9 @@ class SrfRenderer implements FileRendererInterface
         $videoId = $this->getVideoIdFromFile($file);
 
         $urlParams = [];
-/*
         if (!empty($options['autoplay'])) {
             $urlParams[] = 'autoplay=true';
         }
-        if (!empty($options['loop'])) {
-            $urlParams[] = 'loop=1';
-        }
-        $urlParams[] = 'title=' . (int)!empty($options['showinfo']);
-        $urlParams[] = 'byline=' . (int)!empty($options['showinfo']);
-*/
-        $urlParams[] = 'start=';
 
         return sprintf('//tp.srgssr.ch/p/srf/embed?urn=urn:srf:video:%s&%s', $videoId, implode('&amp;', $urlParams));
     }
