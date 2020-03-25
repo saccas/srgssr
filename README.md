@@ -13,7 +13,7 @@ TYPO3 9.5 LTS or later
 
 ### Installation with composer
 
-`composer require saccas/srgssr`.
+`composer req saccas/srgssr`.
 
 ### Installation with TER
 
