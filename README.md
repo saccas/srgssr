@@ -13,10 +13,10 @@ TYPO3 9.5 LTS or later
 
 ### Installation with composer
 
-`composer require saccas/srf`.
+`composer require saccas/srgssr`.
 
 ### Installation with TER
 
-Open the TYPO3 Extension Manager, search for `srf` and install the extension.
+Open the TYPO3 Extension Manager, search for `srgssr` and install the extension.
 
 Thanks to https://github.com/IndyIndyIndy for the youku example extension.
