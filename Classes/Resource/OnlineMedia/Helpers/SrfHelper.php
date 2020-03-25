@@ -95,13 +95,13 @@ class SrfHelper extends AbstractOEmbedHelper
      */
     protected function getOEmbedUrl($mediaId, $format = 'json')
     {
-        return 'https://v.srf.com/v_show/id_' . $mediaId . '.html';
+        return sprintf('https://il.srgssr.ch/integrationlayer/2.0/mediaComposition/byUrn/urn:srf:video:%s.json', $mediaId);
     }
 
     /**
      * Get OEmbed data
      *
-     * Apparently srf.ch does not provide an oEmbed API, but TYPO3 requires one.
+     * Apparently there is no oEmbed API, but TYPO3 requires one.
      * So we have to rely on this ugly solution to "fake" an oEmbed response.
      *
      * @param string $mediaId
@@ -109,33 +109,15 @@ class SrfHelper extends AbstractOEmbedHelper
      */
     protected function getOEmbedData($mediaId)
     {
-        $html = GeneralUtility::getUrl(
-            $this->getOEmbedUrl($mediaId)
-        );
+        $json = GeneralUtility::getUrl($this->getOEmbedUrl($mediaId));
 
-        $doc = new \DOMDocument();
-        $doc->loadHTML($html);
-
-        $title = 'Srf Video'; // Default value
-        $image = '';
-
-        $metas = $doc->getElementsByTagName('meta');
-        for ($i = 0; $i < $metas->length; $i++) {
-            $meta = $metas->item($i);
-            if ($meta->getAttribute('property') == 'og:title') {
-                $title = $meta->getAttribute('content');
-            }
-            if ($meta->getAttribute('property') == 'og:image') {
-                $image = $meta->getAttribute('content');
-            }
-        }
+        $data = json_decode($json, true);
 
         return [
-            'title' => $title,
+            'title' => $data['chapterList']['title'],
             'width' => 480,
             'height' => 270,
-            'author_name' => 'Srf',
-            'thumbnail_url' => $image,
+            'thumbnail_url' => $data['chapterList']['imageUrl'],
             'type' => 'video'
         ];
     }
