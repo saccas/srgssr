@@ -14,13 +14,13 @@ namespace Saccas\Srgssr\Resource\Rendering;
 
 use TYPO3\CMS\Core\Resource\FileInterface;
 
-class SrfRenderer extends AbstractSrgssrRenderer
+class RtsRenderer extends AbstractSrgssrRenderer
 {
     /** @var string */
-    protected $channelName = 'srf';
+    protected $channelName = 'rts';
 
     /** @var string */
-    protected $extension = 'srf';
+    protected $extension = 'rts';
 
     /**
      * Check if given File(Reference) can be rendered
@@ -30,6 +30,6 @@ class SrfRenderer extends AbstractSrgssrRenderer
      */
     public function canRender(FileInterface $file)
     {
-        return ($file->getMimeType() === 'video/srf' || $file->getExtension() === $this->extension) && $this->getOnlineMediaHelper($file) !== false;
+        return ($file->getMimeType() === 'video/rts' || $file->getExtension() === $this->extension) && $this->getOnlineMediaHelper($file) !== false;
     }
 }

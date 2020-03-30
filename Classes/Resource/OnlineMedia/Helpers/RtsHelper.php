@@ -12,14 +12,14 @@ namespace Saccas\Srgssr\Resource\OnlineMedia\Helpers;
  *
  ***/
 
-class SrfHelper extends AbstractSrgssrHelper
+class RtsHelper extends AbstractSrgssrHelper
 {
     /** @var string */
-    protected $channelName = 'srf';
+    protected $channelName = 'rts';
 
     /** @var string  */
-    protected $siteHostname = 'www.srf.ch';
+    protected $siteHostname = 'www.rts.ch';
 
     /** @var string */
-    protected $extension = 'srf';
+    protected $extension = 'rts';
 }
