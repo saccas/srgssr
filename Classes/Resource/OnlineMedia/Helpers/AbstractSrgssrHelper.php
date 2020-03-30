@@ -56,10 +56,10 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
 
         if (!file_exists($temporaryFileName)) {
             $mediaData = $this->getMediaMetadata($videoId);
-            $previewImage = GeneralUtility::getUrl($mediaData['chapterList'][0]['imageUrl'] . 'scale/width/1024');
+            $previewImage = GeneralUtility::getUrl($mediaData['chapterList'][0]['imageUrl'] . '/scale/width/1024');
 
             if ($previewImage === false) {
-                $previewImage = GeneralUtility::getUrl($mediaData['episode']['imageUrl'] . 'scale/width/1024');
+                $previewImage = GeneralUtility::getUrl($mediaData['episode']['imageUrl'] . '/scale/width/1024');
             }
 
             if ($previewImage !== false) {
@@ -165,9 +165,10 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
         if ($mediaData) {
             $metadata = [
                 'title' => $mediaData['chapterList'][0]['title'],
+                'description' => $mediaData['chapterList'][0]['description'],
                 'width' => 1024,
                 'height' => 576,
-                'thumbnail_url' => $mediaData['chapterList'][0]['imageUrl'] . 'scale/width/1024',
+                'thumbnail_url' => $mediaData['chapterList'][0]['imageUrl'] . '/scale/width/1024',
                 'type' => 'video'
             ];
         }
