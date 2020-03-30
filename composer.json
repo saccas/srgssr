@@ -23,9 +23,5 @@
         "psr-4": {
             "Saccas\\Srgssr\\Tests\\": "Tests"
         }
-    },
-    "replace": {
-        "srgssr": "self.version",
-        "typo3-ter/srgssr": "self.version"
     }
 }
