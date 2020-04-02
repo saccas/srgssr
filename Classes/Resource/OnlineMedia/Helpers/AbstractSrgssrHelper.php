@@ -141,7 +141,7 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
      * @param string $mediaId
      * @return array|null
      */
-    protected function getMediaMetadata($mediaId): ?array
+    protected function getMediaMetadata(string $mediaId): ?array
     {
         $mediaMetaData = GeneralUtility::getUrl(
             $this->getMediaMetadataUrl($mediaId)
