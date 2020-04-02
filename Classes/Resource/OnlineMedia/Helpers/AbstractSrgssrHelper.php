@@ -40,7 +40,7 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
     public function getPublicUrl(File $file, $relativeToCurrentScript = false)
     {
         $videoId = $this->getOnlineMediaId($file);
-        return sprintf('https://' . $this->siteHostname . '/play/tv//video//?id=%s', $videoId);
+        return sprintf('https://' . $this->siteHostname . '/play/tv//video/?id=%s', $videoId);
     }
 
     /**
