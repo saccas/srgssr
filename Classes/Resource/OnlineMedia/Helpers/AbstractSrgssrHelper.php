@@ -146,10 +146,10 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
         $mediaMetaData = GeneralUtility::getUrl(
             $this->getMediaMetadataUrl($mediaId)
         );
-        if ($mediaMetaData) {
-            $mediaMetaDataArray = json_decode($mediaMetaData, true);
+        if (is_string($mediaMetaData)) {
+            return json_decode($mediaMetaData, true);
         }
-        return $mediaMetaDataArray;
+        return null;
     }
 
     /**
@@ -158,10 +158,14 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
      * @param File $file
      * @return array with metadata
      */
-    public function getMetaData(File $file): array
+    public function getMetaData(File $file): ?array
     {
         $metadata = [];
-        $mediaData = $this->getMediaMetadata($this->getOnlineMediaId($file));
+        $onlineMediaId = $this->getOnlineMediaId($file);
+        if (empty($onlineMediaId)) {
+            return null
+        }
+        $mediaData = $this->getMediaMetadata($onlineMediaId);
         if ($mediaData) {
             $metadata = [
                 'title' => $mediaData['chapterList'][0]['title'],
