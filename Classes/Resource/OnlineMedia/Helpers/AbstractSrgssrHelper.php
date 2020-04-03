@@ -163,7 +163,7 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
         $metadata = [];
         $onlineMediaId = $this->getOnlineMediaId($file);
         if (empty($onlineMediaId)) {
-            return null
+            return null;
         }
         $mediaData = $this->getMediaMetadata($onlineMediaId);
         if ($mediaData) {
