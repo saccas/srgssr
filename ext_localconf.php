@@ -18,6 +18,12 @@ call_user_func(
         // Register the renderer for the frontend
         $rendererRegistry->registerRendererClass(\Saccas\Srgssr\Resource\Rendering\RsiRenderer::class);
 
+        // Same for rtr
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',rtr';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['rtr'] = \Saccas\Srgssr\Resource\OnlineMedia\Helpers\RtrHelper::class;
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['rtr'] = 'video/rtr';
+        $rendererRegistry->registerRendererClass(\Saccas\Srgssr\Resource\Rendering\RtrRenderer::class);
+
         // Same for rts
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',rts';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['rts'] = \Saccas\Srgssr\Resource\OnlineMedia\Helpers\RtsHelper::class;
