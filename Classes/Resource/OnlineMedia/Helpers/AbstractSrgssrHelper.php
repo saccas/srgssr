@@ -30,6 +30,11 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
     protected $siteHostname = '';
 
     /**
+     * @var $extension = '';
+     */
+    protected $extension = '';
+
+    /**
      * Get public url
      * Return NULL if you want to use core default behaviour
      *
