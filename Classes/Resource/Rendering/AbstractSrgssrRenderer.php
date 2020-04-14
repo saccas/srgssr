@@ -121,7 +121,7 @@ abstract class AbstractSrgssrRenderer implements FileRendererInterface
      * @param FileInterface $file
      * @return string
      */
-    protected function createUrl(array $options, FileInterface $file)
+    public function createUrl(array $options, FileInterface $file)
     {
         $videoId = $this->getVideoIdFromFile($file);
 
