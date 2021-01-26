@@ -1,17 +1,6 @@
 <?php
 namespace Saccas\Srgssr\Resource\OnlineMedia\Helpers;
 
-/***
- *
- * This file is part of the "Srgssr" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2019 https://www.sac-cas.ch
- *
- ***/
-
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\Folder;
 use TYPO3\CMS\Core\Resource\OnlineMedia\Helpers\AbstractOnlineMediaHelper;
@@ -19,20 +8,11 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
 {
-    /**
-     * @var string
-     */
-    protected $channelName = '';
+    protected string $channelName = '';
 
-    /**
-     * @var string
-     */
-    protected $siteHostname = '';
+    protected string $siteHostname = '';
 
-    /**
-     * @var $extension = '';
-     */
-    protected $extension = '';
+    protected string $extension = '';
 
     /**
      * Get public url
@@ -42,7 +22,7 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
      * @param bool $relativeToCurrentScript
      * @return string|null
      */
-    public function getPublicUrl(File $file, $relativeToCurrentScript = false)
+    public function getPublicUrl(File $file, $relativeToCurrentScript = false): string
     {
         $videoId = $this->getOnlineMediaId($file);
         return sprintf('https://' . $this->siteHostname . '/play/tv//video/?id=%s', $videoId);
@@ -54,7 +34,7 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
      * @param File $file
      * @return string
      */
-    public function getPreviewImage(File $file)
+    public function getPreviewImage(File $file): string
     {
         $videoId = $this->getOnlineMediaId($file);
         $temporaryFileName = $this->getTempFolderPath() . $this->channelName . '_' . md5($videoId) . '.jpg';
@@ -82,7 +62,7 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
      * @param Folder $targetFolder
      * @return File|null
      */
-    public function transformUrlToFile($url, Folder $targetFolder)
+    public function transformUrlToFile($url, Folder $targetFolder): ?File
     {
         $videoId = null;
         $host = parse_url($url, PHP_URL_HOST);

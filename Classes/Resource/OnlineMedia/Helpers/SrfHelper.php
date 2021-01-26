@@ -1,25 +1,11 @@
 <?php
 namespace Saccas\Srgssr\Resource\OnlineMedia\Helpers;
 
-/***
- *
- * This file is part of the "Srgssr" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2019 https://www.sac-cas.ch
- *
- ***/
-
 class SrfHelper extends AbstractSrgssrHelper
 {
-    /** @var string */
-    protected $channelName = 'srf';
+    protected string $channelName = 'srf';
 
-    /** @var string  */
-    protected $siteHostname = 'www.srf.ch';
+    protected string $siteHostname = 'www.srf.ch';
 
-    /** @var string */
-    protected $extension = 'srf';
+    protected string $extension = 'srf';
 }

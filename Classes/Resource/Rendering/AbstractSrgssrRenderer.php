@@ -1,17 +1,6 @@
 <?php
 namespace Saccas\Srgssr\Resource\Rendering;
 
-/***
- *
- * This file is part of the "Srgssr" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2019 https://www.sac-cas.ch
- *
- ***/
-
 use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Resource\FileReference;
@@ -21,17 +10,11 @@ use TYPO3\CMS\Core\Resource\Rendering\FileRendererInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Saccas\Srgssr\Utility\TypoScriptFrontendControllerTrait;
 
-/**
- * Srf renderer class
- */
 abstract class AbstractSrgssrRenderer implements FileRendererInterface
 {
     use TypoScriptFrontendControllerTrait;
 
-    /**
-     * @var OnlineMediaHelperInterface
-     */
-    protected $onlineMediaHelper;
+    protected OnlineMediaHelperInterface $onlineMediaHelper;
 
     /**
      * Returns the priority of the renderer
@@ -42,7 +25,7 @@ abstract class AbstractSrgssrRenderer implements FileRendererInterface
      *
      * @return int
      */
-    public function getPriority()
+    public function getPriority(): int
     {
         return 1;
     }
@@ -79,7 +62,7 @@ abstract class AbstractSrgssrRenderer implements FileRendererInterface
      * @param bool $usedPathsRelativeToCurrentScript See $file->getPublicUrl()
      * @return string
      */
-    public function render(FileInterface $file, $width, $height, array $options = [], $usedPathsRelativeToCurrentScript = false)
+    public function render(FileInterface $file, $width, $height, array $options = [], $usedPathsRelativeToCurrentScript = false): string
     {
         $options = $this->collectOptions($options, $file);
         $src = $this->createUrl($options, $file);
@@ -97,7 +80,7 @@ abstract class AbstractSrgssrRenderer implements FileRendererInterface
      * @param FileInterface $file
      * @return array
      */
-    protected function collectOptions(array $options, FileInterface $file)
+    protected function collectOptions(array $options, FileInterface $file): array
     {
         if (!isset($options['autoplay']) && $file instanceof FileReference) {
             $autoplay = $file->getProperty('autoplay');
@@ -141,7 +124,7 @@ abstract class AbstractSrgssrRenderer implements FileRendererInterface
      * @param FileInterface $file
      * @return string
      */
-    protected function getVideoIdFromFile(FileInterface $file)
+    protected function getVideoIdFromFile(FileInterface $file): string
     {
         if ($file instanceof FileReference) {
             $orgFile = $file->getOriginalFile();
@@ -158,7 +141,7 @@ abstract class AbstractSrgssrRenderer implements FileRendererInterface
      * @param array $options
      * @return array
      */
-    protected function collectIframeAttributes($width, $height, array $options)
+    protected function collectIframeAttributes($width, $height, array $options): array
     {
         $attributes = ['allowfullscreen'];
         if (isset($options['additionalAttributes']) && is_array($options['additionalAttributes'])) {
