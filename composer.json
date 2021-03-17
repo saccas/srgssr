@@ -23,5 +23,10 @@
         "psr-4": {
             "Saccas\\Srgssr\\Tests\\": "Tests"
         }
-    }
+    },
+    "extra": {
+      "typo3/cms": {
+         "extension-key": "srgssr"
+      }
+   }
 }
