@@ -7,5 +7,5 @@ class RsiHelper extends AbstractSrgssrHelper
 
     protected string $siteHostname = 'www.rsi.ch';
 
-    protected string $extension = 'rsi';
+    protected $extension = 'rsi';
 }

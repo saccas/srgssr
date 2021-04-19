@@ -7,5 +7,5 @@ class SrfHelper extends AbstractSrgssrHelper
 
     protected string $siteHostname = 'www.srf.ch';
 
-    protected string $extension = 'srf';
+    protected $extension = 'srf';
 }

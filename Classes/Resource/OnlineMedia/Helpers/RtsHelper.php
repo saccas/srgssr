@@ -7,5 +7,5 @@ class RtsHelper extends AbstractSrgssrHelper
 
     protected string $siteHostname = 'www.rts.ch';
 
-    protected string $extension = 'rts';
+    protected $extension = 'rts';
 }

@@ -7,5 +7,5 @@ class SwiHelper extends AbstractSrgssrHelper
 
     protected string $siteHostname = 'play.swi.ch';
 
-    protected string $extension = 'swi';
+    protected $extension = 'swi';
 }

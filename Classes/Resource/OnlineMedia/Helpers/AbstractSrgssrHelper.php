@@ -12,7 +12,7 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
 
     protected string $siteHostname = '';
 
-    protected string $extension = '';
+    protected $extension = '';
 
     /**
      * Get public url

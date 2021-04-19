@@ -7,5 +7,5 @@ class RtrHelper extends AbstractSrgssrHelper
 
     protected string $siteHostname = 'www.rtr.ch';
 
-    protected string $extension = 'rtr';
+    protected $extension = 'rtr';
 }
