@@ -1,6 +1,7 @@
 <?php
 
 defined('TYPO3_MODE') || die('Access denied.');
+defined('TYPO3') || die();
 
 call_user_func(
     function ($extKey) {
