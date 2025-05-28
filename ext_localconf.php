@@ -1,8 +1,11 @@
 <?php
 
+use TYPO3\CMS\Core\Resource\Rendering\RendererRegistry;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
 call_user_func(
     function ($extKey) {
-        $rendererRegistry = \TYPO3\CMS\Core\Resource\Rendering\RendererRegistry::getInstance();
+        $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
 
         // Register file extensions
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',rsi';
