@@ -1,41 +1,36 @@
 <?php
 
+use Saccas\Srgssr\Resource\OnlineMedia\Helpers\RsiHelper;
+use Saccas\Srgssr\Resource\OnlineMedia\Helpers\RtrHelper;
+use Saccas\Srgssr\Resource\OnlineMedia\Helpers\RtsHelper;
+use Saccas\Srgssr\Resource\OnlineMedia\Helpers\SrfHelper;
+use Saccas\Srgssr\Resource\Rendering\RsiRenderer;
+use Saccas\Srgssr\Resource\Rendering\RtrRenderer;
+use Saccas\Srgssr\Resource\Rendering\RtsRenderer;
+use Saccas\Srgssr\Resource\Rendering\SrfRenderer;
 use TYPO3\CMS\Core\Resource\Rendering\RendererRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-call_user_func(
-    function ($extKey) {
-        $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
+(static function () {
+    $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
 
-        // Register file extensions
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',rsi';
+    $rendererRegistry->registerRendererClass(RsiRenderer::class);
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',rsi';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['rsi'] = RsiHelper::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['rsi'] = 'video/rsi';
 
-        // Register the online media helper
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['rsi'] = \Saccas\Srgssr\Resource\OnlineMedia\Helpers\RsiHelper::class;
+    $rendererRegistry->registerRendererClass(RtrRenderer::class);
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',rtr';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['rtr'] = RtrHelper::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['rtr'] = 'video/rtr';
 
-        // Register the mime type
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['rsi'] = 'video/rsi';
+    $rendererRegistry->registerRendererClass(RtsRenderer::class);
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',rts';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['rts'] = RtsHelper::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['rts'] = 'video/rts';
 
-        // Register the renderer for the frontend
-        $rendererRegistry->registerRendererClass(\Saccas\Srgssr\Resource\Rendering\RsiRenderer::class);
-
-        // Same for rtr
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',rtr';
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['rtr'] = \Saccas\Srgssr\Resource\OnlineMedia\Helpers\RtrHelper::class;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['rtr'] = 'video/rtr';
-        $rendererRegistry->registerRendererClass(\Saccas\Srgssr\Resource\Rendering\RtrRenderer::class);
-
-        // Same for rts
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',rts';
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['rts'] = \Saccas\Srgssr\Resource\OnlineMedia\Helpers\RtsHelper::class;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['rts'] = 'video/rts';
-        $rendererRegistry->registerRendererClass(\Saccas\Srgssr\Resource\Rendering\RtsRenderer::class);
-
-        // Same for srf
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',srf';
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['srf'] = \Saccas\Srgssr\Resource\OnlineMedia\Helpers\SrfHelper::class;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['srf'] = 'video/srf';
-        $rendererRegistry->registerRendererClass(\Saccas\Srgssr\Resource\Rendering\SrfRenderer::class);
-    },
-    'srgssr'
-);
+    $rendererRegistry->registerRendererClass(SrfRenderer::class);
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',srf';
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['srf'] = SrfHelper::class;
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['srf'] = 'video/srf';
+})();
