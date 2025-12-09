@@ -13,7 +13,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 abstract class AbstractSrgssrRenderer implements FileRendererInterface
 {
-    protected bool|OnlineMediaHelperInterface $onlineMediaHelper = false;
+    protected null|bool|OnlineMediaHelperInterface $onlineMediaHelper = null;
 
     /**
      * Returns the priority of the renderer
