@@ -1,4 +1,5 @@
 <?php
+
 namespace Saccas\Srgssr\Resource\Rendering;
 
 use TYPO3\CMS\Core\Resource\FileInterface;
@@ -9,6 +10,8 @@ class RtrRenderer extends AbstractSrgssrRenderer
 
     protected string $extension = 'rtr';
 
+    protected string $mimeType = 'video/rtr';
+
     /**
      * Check if given File(Reference) can be rendered
      *
@@ -17,6 +20,6 @@ class RtrRenderer extends AbstractSrgssrRenderer
      */
     public function canRender(FileInterface $file): bool
     {
-        return ($file->getMimeType() === 'video/rtr' || $file->getExtension() === $this->extension) && $this->getOnlineMediaHelper($file) !== false;
+        return ($file->getMimeType() === $this->mimeType || $file->getExtension() === $this->extension) && $this->getOnlineMediaHelper($file) !== false;
     }
 }
