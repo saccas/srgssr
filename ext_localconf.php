@@ -11,6 +11,8 @@ use Saccas\Srgssr\Resource\Rendering\SrfRenderer;
 use TYPO3\CMS\Core\Resource\Rendering\RendererRegistry;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+defined('TYPO3') or die();
+
 (static function () {
     $rendererRegistry = GeneralUtility::makeInstance(RendererRegistry::class);
 
