@@ -1,4 +1,5 @@
 <?php
+
 namespace Saccas\Srgssr\Resource\OnlineMedia\Helpers;
 
 class RtsHelper extends AbstractSrgssrHelper
