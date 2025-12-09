@@ -36,12 +36,6 @@ call_user_func(
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['srf'] = \Saccas\Srgssr\Resource\OnlineMedia\Helpers\SrfHelper::class;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['srf'] = 'video/srf';
         $rendererRegistry->registerRendererClass(\Saccas\Srgssr\Resource\Rendering\SrfRenderer::class);
-
-        // Same for swi
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'] .= ',swi';
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['fal']['onlineMediaHelpers']['swi'] = \Saccas\Srgssr\Resource\OnlineMedia\Helpers\SwiHelper::class;
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['FileInfo']['fileExtensionToMimeType']['swi'] = 'video/swi';
-        $rendererRegistry->registerRendererClass(\Saccas\Srgssr\Resource\Rendering\SwiRenderer::class);
     },
     'srgssr'
 );
