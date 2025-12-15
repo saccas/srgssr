@@ -5,14 +5,6 @@
 This extension enables editors to attach srf.ch videos in content elements or any other records using media files.
 Just add a video url with the "Add media by URL" button. No setup aside from the initial installation is required.
 
-## Which version for which TYPO3 and PHP?
-
-| Srgssr | TYPO3     | PHP       | Support / Development                |
-|--------|-----------|-----------|--------------------------------------|
-| 3.x    | 13 LTS    | 8.3       | features, bugfixes, security updates |
-| 2.x    | 11 LTS    | 8.1       | none                                 |
-| 1.x    | 9, 10 LTS | 7.2 - 7.4 | none                                 |
-
 ## Installation
 
 ### Installation with composer
@@ -22,3 +14,14 @@ Just add a video url with the "Add media by URL" button. No setup aside from the
 ## Thanks
 
 Thanks to https://github.com/IndyIndyIndy for the youku example extension.
+
+## Changelog
+
+### v3.0.0
+
+* Support TYPO3 v13.
+* Add basic CI with QA tooling.
+
+### v2.0.0
+
+Support TYPO3 v11.

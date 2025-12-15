@@ -1,22 +1,12 @@
-# macOS
-.DS_Store
-
 # ide
-.project
-.buildpath
-.settings
-.nbproject
-.idea
-!/.idea/inspectionProfiles/Project_Default.xml
+/.project
+/.buildpath
+/.settings
+/.nbproject
+/.idea
 
-# php-cs-fixer
-.php_cs.cache
-.php-cs-fixer.cache
+# git
+/.auth.json
 
-# rector
-/.phprector.cache
-
-#
-/.Build
-/var
-/config
+web
+vendor

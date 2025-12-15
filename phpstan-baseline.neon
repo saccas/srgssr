@@ -1,0 +1,163 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Binary operation "\." between mixed and ''\.'' results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Binary operation "\." between mixed and ''/scale/width/1024'' results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 3
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Cannot access offset ''description'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Cannot access offset ''imageUrl'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 3
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Cannot access offset ''title'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 2
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Cannot access offset 0 on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 5
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Method Saccas\\Srgssr\\Resource\\OnlineMedia\\Helpers\\AbstractSrgssrHelper\:\:getMediaMetadata\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Method Saccas\\Srgssr\\Resource\\OnlineMedia\\Helpers\\AbstractSrgssrHelper\:\:getMediaMetadata\(\) should return array\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Method Saccas\\Srgssr\\Resource\\OnlineMedia\\Helpers\\AbstractSrgssrHelper\:\:getMetaData\(\) should return array\{title\: string, description\: string, width\: int, height\: int, thumbnail_url\: string, type\: string\}\|null but returns array\{\}\|array\{title\: mixed, description\: mixed, width\: 1024, height\: 576, thumbnail_url\: non\-falsy\-string, type\: ''video''\}\.$#'
+			identifier: return.type
+			count: 1
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Parameter \#1 \$haystack of function strrpos expects string, array\<mixed\>\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Parameter \#1 \$string of function parse_str expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Parameter \#1 \$string of function substr expects string, array\<mixed\>\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: Classes/Resource/OnlineMedia/Helpers/AbstractSrgssrHelper.php
+
+		-
+			message: '#^Access to an undefined property Saccas\\Srgssr\\Resource\\Rendering\\AbstractSrgssrRenderer\:\:\$channelName\.$#'
+			identifier: property.notFound
+			count: 2
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Binary operation "\." between ''//tp\.srgssr\.ch/p/'' and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Binary operation "\." between non\-falsy\-string and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Cannot call method getOnlineMediaId\(\) on bool\|TYPO3\\CMS\\Core\\Resource\\OnlineMedia\\Helpers\\OnlineMediaHelperInterface\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Method Saccas\\Srgssr\\Resource\\Rendering\\AbstractSrgssrRenderer\:\:collectIframeAttributes\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Method Saccas\\Srgssr\\Resource\\Rendering\\AbstractSrgssrRenderer\:\:collectIframeAttributes\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Method Saccas\\Srgssr\\Resource\\Rendering\\AbstractSrgssrRenderer\:\:collectOptions\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Method Saccas\\Srgssr\\Resource\\Rendering\\AbstractSrgssrRenderer\:\:collectOptions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Method Saccas\\Srgssr\\Resource\\Rendering\\AbstractSrgssrRenderer\:\:createUrl\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Method Saccas\\Srgssr\\Resource\\Rendering\\AbstractSrgssrRenderer\:\:render\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Parameter \#1 \$arr of static method TYPO3\\CMS\\Core\\Utility\\GeneralUtility\:\:implodeAttributes\(\) expects array\<string, int\|string\>, array\<mixed, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Parameter \#1 \$string of function htmlspecialchars expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Cannot access offset ''HTTP'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 2
+			path: Tests/Functional/GuzzleClientFaker.php
+
+		-
+			message: '#^Cannot access offset ''faker'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 2
+			path: Tests/Functional/GuzzleClientFaker.php
+
+		-
+			message: '#^Cannot access offset ''handler'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 2
+			path: Tests/Functional/GuzzleClientFaker.php
