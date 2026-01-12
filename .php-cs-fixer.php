@@ -2,19 +2,15 @@
 
 declare(strict_types=1);
 
+use PhpCsFixer\Finder;
 use TYPO3\CodingStandards\CsFixerConfig;
 
-$finder = PhpCsFixer\Finder::create()
-    ->in([
-        __DIR__ . '/../',
-    ])
-    ->exclude([
-        '.Build',
-        'var',
-        'config',
-    ]);
-
 return CsFixerConfig::create()
+    ->setFinder(
+        (new Finder())
+            ->ignoreVCSIgnored(true)
+            ->in(realpath(__DIR__))
+    )
     ->addRules([
         'fully_qualified_strict_types' => [
             'import_symbols' => true,
@@ -26,5 +22,4 @@ return CsFixerConfig::create()
         'single_line_empty_body' => false,
         'no_trailing_comma_in_singleline_array' => true,
         'php_unit_test_annotation' => ['style' => 'annotation'],
-    ])
-    ->setFinder($finder);
+    ]);

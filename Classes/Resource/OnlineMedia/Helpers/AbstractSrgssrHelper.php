@@ -31,9 +31,13 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
 
         if (!file_exists($temporaryFileName)) {
             $mediaData = $this->getMediaMetadata($videoId);
-            $previewImage = GeneralUtility::getUrl($mediaData['chapterList'][0]['imageUrl'] . '/scale/width/1024');
 
-            if ($previewImage === false) {
+            $previewImage = false;
+            if (isset($mediaData['chapterList'][0]['imageUrl'])) {
+                $previewImage = GeneralUtility::getUrl($mediaData['chapterList'][0]['imageUrl'] . '/scale/width/1024');
+            }
+
+            if ($previewImage === false && isset($mediaData['episode']['imageUrl'])) {
                 $previewImage = GeneralUtility::getUrl($mediaData['episode']['imageUrl'] . '/scale/width/1024');
             }
 
@@ -57,8 +61,11 @@ abstract class AbstractSrgssrHelper extends AbstractOnlineMediaHelper
         }
 
         $urlQueryParams = parse_url($url, PHP_URL_QUERY);
-        parse_str($urlQueryParams, $params);
+        if ($urlQueryParams === null) {
+            return null;
+        }
 
+        parse_str($urlQueryParams, $params);
         if (!empty($params['urn'])) {
             $mediaId = substr($params['urn'], strrpos($params['urn'], ':') + 1);
             return $this->transformMediaIdToFile($mediaId, $targetFolder, $this->extension);
