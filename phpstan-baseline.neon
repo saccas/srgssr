@@ -145,6 +145,18 @@ parameters:
 			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
 
 		-
+			message: '#^Parameter \#2 \$array of function implode expects array\<string\>, array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
+			message: '#^Parameter \#2 \$array of function implode expects array\<string\>, array\<mixed, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: Classes/Resource/Rendering/AbstractSrgssrRenderer.php
+
+		-
 			message: '#^Cannot access offset ''HTTP'' on mixed\.$#'
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 2
